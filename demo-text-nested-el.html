@@ -1,0 +1,22 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!-- this is a demo element that is being rendered by row-adder element -->
+<dom-module id="demo-text-nested-el">
+    <style>
+        p{
+            background: green;
+            color: black;
+            font-size: 16px;
+        }
+    </style>
+    <template>
+        <p>Hello World</p>
+        <content-slot id="css-grid-1"></content-slot>
+        <p>Some other dom break point</p>
+    </template>
+    <script>
+        Polymer({
+            is: 'demo-text-nested-el'
+        });
+    </script>
+</dom-module>
