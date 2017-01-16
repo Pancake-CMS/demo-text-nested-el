@@ -1,4 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../content-editor/content-editor.html">
+<link rel="import" href="../nested-includer/nested-includer.html">
 
 <!-- this is a demo element that is being rendered by row-adder element -->
 <dom-module id="demo-text-nested-el">
@@ -10,13 +12,18 @@
         }
     </style>
     <template>
-        <p>Hello World</p>
+        <p is-content="inline-more" content-id="usual-paragraph">Hello World. Try selecting some text here.</p>
         <content-slot id="css-grid-1"></content-slot>
-        <p>Some other dom break point</p>
+        <p is-content="wsywig" content-id="usual-paragraph-2">Some other dom break point</p>
     </template>
     <script>
         Polymer({
-            is: 'demo-text-nested-el'
+            is: 'demo-text-nested-el',
+
+            behaviors: [
+                ContentEditorBehavior,
+                NestedIncluderBehavior
+            ]
         });
     </script>
 </dom-module>
