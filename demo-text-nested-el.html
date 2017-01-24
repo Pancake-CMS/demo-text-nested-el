@@ -23,7 +23,15 @@
             behaviors: [
                 ContentEditorBehavior,
                 NestedIncluderBehavior
-            ]
+            ],
+
+            properties: {
+                usercontent: {
+                    type: Object,
+                    notify: true,
+                    reflectToAttribute: false
+                }
+            }
         });
     </script>
 </dom-module>
